@@ -11,7 +11,7 @@ Teachers across the United States routinely finance classroom supplies out of po
 - Predicts the probability that a newly posted project will be fully funded, using only features available at posting time (school characteristics, project category, requested amount).
 - Compares several classifiers under 5-fold stratified cross-validation; XGBoost performed best with a mean cross-validation ROC AUC of 0.766.
 - Tunes the XGBoost pipeline with grid search and selects a decision threshold using Youden's J statistic, balancing the cost of missed at-risk projects against reviewer capacity.
-- On held-out test data of 185,103 projects, the final model reaches a ROC AUC of 0.757. At the selected threshold of 0.68 it correctly identifies 68% of unfunded projects while retaining 69% recall on funded ones.
+- On held-out test data of 185,103 projects, the final model reaches a ROC AUC of 0.757. At the selected threshold of 0.68 it correctly identifies 68% of unfunded projects while retaining 68% recall on funded ones.
 - Ranks projects by predicted funding probability and surfaces the bottom 10% as the recommended intervention list.
 
 An honest note on tuning: grid search did not beat the default XGBoost configuration on cross-validation score (best tuned ROC AUC 0.756 vs 0.766 for the default). The final model is reported on the held-out test set either way, and the gap is documented in the notebook rather than hidden.
