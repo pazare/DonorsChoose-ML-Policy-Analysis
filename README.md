@@ -18,7 +18,7 @@ Teachers across the United States routinely finance classroom supplies out of po
 
 Why a bottom-10% list rather than the raw threshold: at the 0.68 threshold the model flags 78,523 of the 185,103 test projects (42%) as at-risk — with precision 0.49 and recall 0.68 for the unfunded class at the model's 0.757 test ROC AUC — far more than a small review team can act on. The recommendation therefore ranks projects by predicted funding probability and hands reviewers only the lowest 10% (about 18,500 projects on a test-cohort-sized batch); the notebook omits separate precision and recall at that decile cut.
 
-Grid search trailed the default XGBoost configuration on cross-validation score (best tuned ROC AUC 0.756 vs 0.766 for the default). The final model is reported on the held-out test set either way, and the gap is documented in the notebook.
+Grid search trailed the default XGBoost configuration on cross-validation score (best tuned ROC AUC 0.756 vs 0.766 for the default). The final model's reported numbers come from the held-out test set either way, and the notebook documents the gap.
 
 ## Fairness audit
 
@@ -44,7 +44,7 @@ Dataset link: https://www.kaggle.com/c/kdd-cup-2014-predicting-excitement-at-don
 1. Install dependencies: `pip install -r requirements.txt`
 2. Download the Kaggle data into `Datasets/` as described above.
 3. Open `ML_Final.ipynb` and run top to bottom. Cross-validation and grid search are the slowest stages on the full dataset.
-4. Reproduce: `jupyter notebook ML_Final.ipynb` (Run All). Estimated runtime: unmeasured end to end. The only timings the notebook logs are the grid search's 192 fits at 1.4–3.8 s each (about 7.6 minutes of summed fit time, parallelized with `n_jobs=-1`); no other stage is timed.
+4. Reproduce: `jupyter notebook ML_Final.ipynb` (Run All). End-to-end runtime: unmeasured. The notebook logs timings only for the grid search's 192 fits at 1.4–3.8 s each (about 7.6 minutes of summed fit time, parallelized with `n_jobs=-1`); no other stage is timed.
 
 ## Limitations and future work
 
