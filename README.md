@@ -48,7 +48,7 @@ Dataset link: https://www.kaggle.com/c/kdd-cup-2014-predicting-excitement-at-don
 
 ## Limitations and future work
 
-- The model uses only static, at-posting features. It identifies the intervention target rather than the intervention method because causal intervention effects remain outside the model.
+- The model uses only static, at-posting features. It does not estimate the effect of any specific intervention, so it identifies where to intervene but not how.
 - A production version would pair the model with a database-backed decision support system and a reviewer-facing interface for ad hoc analysis.
 - Intervention analysis, including measuring uplift from reviewer contact, is the natural next step.
 
